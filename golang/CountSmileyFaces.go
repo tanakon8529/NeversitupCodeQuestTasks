@@ -14,7 +14,3 @@ func countSmileys(arr []string) int {
 	}
 	return count
 }
-
-// func main() {
-// 	fmt.Println(countSmileys([]string{":)", ";(", ";}", ":-D"}))
-// }

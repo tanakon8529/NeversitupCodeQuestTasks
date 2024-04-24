@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func findOddInt(seq []int) int {
 	nums := make(map[int]int)
 	for _, num := range seq {
@@ -13,8 +11,4 @@ func findOddInt(seq []int) int {
 		}
 	}
 	return 0
-}
-
-func main() {
-	fmt.Println(findOddInt([]int{1, 2, 3, 1, 3, 2, 3}))
 }
