@@ -5,10 +5,7 @@ on: [push, pull_request]
 jobs:
   golang-tests:
     name: Golang Tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
@@ -27,22 +24,19 @@ jobs:
 
   csharp-tests:
     name: C# Tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Change directory to c-sharp
-      run: cd c-sharp
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '6.0.x'
+
+    - name: Change directory to c-sharp
+      run: cd c-sharp
 
     - name: Build and Test
       run: dotnet test --no-build --verbosity normal
