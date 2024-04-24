@@ -35,8 +35,5 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
-    - name: Change directory to c-sharp
-      run: cd c-sharp
-
-    - name: Build and Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Run C# Tests
+      run: dotnet test ./c-sharp/NeversitupCodeQuestTasks.csproj --no-build --verbosity normal
